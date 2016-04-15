@@ -20,6 +20,10 @@ var config = require('./config.json')[app.get('env')];
 console.log('config obj', config);
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || config.mongo_url;
 
+// set up handlerbar
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
 app.use(cors());
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // app.use(logger('dev'));
