@@ -11,17 +11,14 @@ router.get('/loginFail.html', function(req, res) {
 });
 
 router.get('/index.html', function(req, res) {
-  console.log('user: ', req.user);
   res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
 router.get('/editHomePage.html', function(req, res) {
-  console.log('user: ', req.user);
   res.sendFile(path.join(__dirname, '../views/editHomePage.html'));
 });
 
 router.get('/addArticlePage.html', function(req, res) {
-  console.log('user: ', req.user);
   res.sendFile(path.join(__dirname, '../views/addArticlePage.html'));
 });
 module.exports = router;

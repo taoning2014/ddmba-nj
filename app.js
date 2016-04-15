@@ -11,6 +11,7 @@ var errorhandler = require('errorhandler');
 
 var angularPage = require('./routes/angularPage');
 var authlocal = require('./routes/auth-local');
+var content = require('./routes/content');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/', angularPage);
 app.use('/api/auth', authlocal);
+app.use('/', content);
 
 // Handle 404
 app.use(function(req, res) {

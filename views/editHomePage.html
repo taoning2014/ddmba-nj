@@ -10,6 +10,11 @@
 <div layout="row">
 
   <div ng-controller="EditHomeCtrl" layout="column" ng-cloak class="md-inline-form" flex-offset="25" flex="50">
+    <md-toolbar class="">
+      <div class="md-toolbar-tools">
+        <h2 class="md-flex">Edit Homepage</h2>
+      </div>
+    </md-toolbar>
     <md-content layout-padding>
       <div>
         <form name="userForm">
@@ -68,7 +73,7 @@
           </div>
           <md-input-container class="md-block">
             <label>Biography</label>
-            <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            <textarea ng-model="user.biography"  rows="25" cols="50" md-select-on-focus></textarea>
           </md-input-container>
         </form>
       </div>

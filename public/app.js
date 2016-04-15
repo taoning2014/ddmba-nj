@@ -20,6 +20,9 @@ angular
   .controller('EditHomeCtrl', function($scope) {
 
   })
+  .controller('AddArticleCtrl', function($scope) {
+
+  })
   .config(function($mdThemingProvider) {
     // Configure a dark theme with primary foreground yellow
     $mdThemingProvider.theme('docs-dark', 'default')
