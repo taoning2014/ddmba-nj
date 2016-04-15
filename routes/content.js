@@ -1,3 +1,4 @@
+// This page are all rest api
 var express = require('express');
 var router = express.Router();
 var Article = require('../mongodb/models').Article;
