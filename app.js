@@ -10,7 +10,7 @@ var cors = require('cors');
 var errorhandler = require('errorhandler');
 
 var angularPage = require('./routes/angularPage');
-// var authlocal = require('./routes/auth-local');
+var authlocal = require('./routes/auth-local');
 
 var app = express();
 
@@ -26,13 +26,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('express-session')({
   secret: 'ddmba take me home',
-  store: new MongoStore({ url: uristring})
+  store: new MongoStore({ url: uristring })
 }));
 // static resource for static page and angular
 app.use(express.static(__dirname + '/public'));
 
 app.use('/', angularPage);
-// app.use('/api/auth', authlocal);
+app.use('/api/auth', authlocal);
 
 // Handle 404
 app.use(function(req, res) {

@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>wukong</title>
+  <title>login</title>
   <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css"/>
   <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css"/>
-  <link rel="stylesheet" type="text/css" href="/dist/css/all.css">
+  <link rel="stylesheet" type="text/css" href="/all.css">
 </head>
-<body ng-app="wukong" ng-cloak>
+<body ng-app="main" ng-cloak ng-controller="IndexCtrl">
 
-<div ui-view></div>
+<div ng-cloak layout="row">
+  <div flex-offset="25" flex="50">
+    <md-toolbar class="md-hue-3">
+      <div class="md-toolbar-tools">
+        <span>Choose an action</span>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-list>
+        <md-list-item>
+          <md-button flex md-no-ink class="md-primary" ng-click="goEditHomePage()">Edit home page</md-button>
+        </md-list-item>
+        <md-list-item>
+          <md-button flex md-no-ink class="md-primary" ng-click="goAddArticlePage()">Add article</md-button>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</div>
 
 <script src="/bower_components/angular/angular.js"></script>
 <script src="/bower_components/angular-animate/angular-animate.js"></script>
@@ -16,6 +34,6 @@
 <script src="/bower_components/angular-messages/angular-messages.js"></script>
 <script src="/bower_components/angular-material/angular-material.js"></script>
 <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-<script src="/dist/js/app.js"></script>
+<script src="/app.js"></script>
 </body>
 </html>

@@ -7,24 +7,16 @@
   <link rel="stylesheet" type="text/css" href="/all.css">
 </head>
 <body ng-app="main" ng-cloak>
-<div layout="row" class="login">
 
-  <div ng-controller="LoginCtrl" layout="column" ng-cloak class="md-inline-form" flex-offset="25" flex="50">
-    <form name="loginForm" action="/api/auth/login" method="post">
-      <md-content layout-gt-sm="column" layout-padding>
-        <md-input-container>
-          <label>Username</label>
-          <input name="username">
-        </md-input-container>
-        <md-input-container>
-          <label>Password</label>
-          <input name="password" type="password">
-        </md-input-container>
-        <md-button md-no-ink class="md-primary" type="submit">Login</md-button>
-      </md-content>
-    </form>
+<md-toolbar class="">
+  <div class="md-toolbar-tools">
+    <h2 class="md-flex">Login in failed</h2>
   </div>
-</div>
+</md-toolbar>
+<md-content flex layout-padding>
+  <p>Login in failed</p>
+  <a href="/login.html"> Click here to back to the login page!</a>
+</md-content>
 <script src="/bower_components/angular/angular.js"></script>
 <script src="/bower_components/angular-animate/angular-animate.js"></script>
 <script src="/bower_components/angular-aria/angular-aria.js"></script>

@@ -1,28 +1,24 @@
 angular
   .module('main', ['ngMaterial', 'ngMessages'])
-  .controller('LoginCtrl', function($scope) {
+  .controller('LoginCtrl', function($scope, $window) {
     $scope.login = function() {
       console.log('Click login');
+      $window.location.href='/api/login';
     }
   })
-  .controller('editCtrl', function($scope) {
-    $scope.user = {
-      title: 'Developer',
-      email: 'ipsum@lorem.com',
-      firstName: '',
-      lastName: '',
-      company: 'Google',
-      address: '1600 Amphitheatre Pkwy',
-      city: 'Mountain View',
-      state: 'CA',
-      biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
-      postalCode: '94043'
+  .controller('IndexCtrl', function($scope, $window) {
+    $scope.goEditHomePage = function() {
+      console.log('Click goEditHomePage');
+      $window.location.href='/editHomePage.html';
     };
-    $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-    'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-    'WY').split(' ').map(function(state) {
-      return {abbrev: state};
-    });
+
+    $scope.goAddArticlePage = function() {
+      console.log('Click goAddArticlePage');
+      $window.location.href='/addArticlePage.html';
+    }
+  })
+  .controller('EditHomeCtrl', function($scope) {
+
   })
   .config(function($mdThemingProvider) {
     // Configure a dark theme with primary foreground yellow
