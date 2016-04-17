@@ -1,0 +1,19 @@
+<div layout="row" class="login">
+    <md-whiteframe class="md-whiteframe-1dp" flex="60" flex-offset="20" layout-align="center center">
+        <div ng-controller="LoginCtrl" layout="column" class="md-inline-form">
+            <form name="loginForm" action="/api/auth/login" method="post">
+                <md-content layout-gt-sm="column" layout-padding>
+                    <md-input-container>
+                        <label>Username</label>
+                        <input name="username">
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Password</label>
+                        <input name="password" type="password">
+                    </md-input-container>
+                    <md-button md-no-ink class="md-primary" type="submit">Login</md-button>
+                </md-content>
+            </form>
+        </div>
+    </md-whiteframe>
+</div>

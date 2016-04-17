@@ -9,10 +9,12 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var errorhandler = require('errorhandler');
 
-var angularPage = require('./routes/angularPage');
+exphbs  = require('express-handlebars');
+
+var admin = require('./routes/admin');
 var authlocal = require('./routes/auth-local');
 var content = require('./routes/content');
-var staticPage = require('./routes/staticPage');
+var client = require('./routes/client');
 
 var app = express();
 
@@ -21,8 +23,11 @@ console.log('config obj', config);
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || config.mongo_url;
 
 // set up handlerbar
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'hbs');
+
+app.engine('handlebars', exphbs({defaultLayout: 'editor'}));
+app.set('view engine', 'handlebars');
 
 app.use(cors());
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -37,10 +42,10 @@ app.use(require('express-session')({
 // static resource for static page and angular
 app.use(express.static(__dirname + '/public'));
 
-app.use('/', angularPage);
+app.use('/', admin);
 app.use('/api/auth', authlocal);
 app.use('/', content);
-app.use('/', staticPage);
+app.use('/', client);
 
 // Handle 404
 app.use(function(req, res) {

@@ -16,6 +16,7 @@
     "debug": "^2.2.0",
     "errorhandler": "^1.4.3",
     "express": "4.13.3",
+    "express-handlebars": "^3.0.0",
     "express-session": "^1.13.0",
     "hbs": "^4.0.0",
     "http-status": "^0.2.0",

@@ -38,10 +38,10 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 router.post('/login',
-  passport.authenticate('local', { failureRedirect: '/loginFail.html' }),
+  passport.authenticate('local', { failureRedirect: '/fail' }),
   function(req, res) {
 //    console.log('In auth, user: ', req.user);
-    res.redirect('/index.html');
+    res.redirect('/selectAction');
   });
 
 router.get('/logout', function(req, res) {
