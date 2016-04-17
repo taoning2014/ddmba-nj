@@ -1,0 +1,1323 @@
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper" class="clearfix">
+
+    <!-- Header
+        ============================================= -->
+    <header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                          ============================================= -->
+                <div id="logo">
+                    <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img
+                            src="images/logo.png" alt="Canvas Logo"></a>
+                    <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img
+                            src="images/logo@2x.png" alt="Canvas Logo"></a>
+                </div><!-- #logo end -->
+
+                <!-- Primary Navigation
+                          ============================================= -->
+                <nav id="primary-menu" class="dark">
+
+                    <ul>
+                        <li class="current"><a href="#">
+                            <div>首頁</div>
+                        </a></li>
+                        <li><a href="#">
+                            <div>活動查詢</div>
+                        </a></li>
+                        <li><a href="#">
+                            <div>法鼓通訊</div>
+                        </a></li>
+                        <li><a href="#">
+                            <div>加入我們</div>
+                        </a></li>
+                        <li><a href="#">
+                            <div>登錄</div>
+                        </a></li>
+                    </ul>
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+
+    </header><!-- #header end -->
+
+    <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
+
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide dark" style="background-image: url('images/slider/swiper/4.jpg');">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">歡迎訪問法鼓山新澤西分會</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">1992 年 10
+                                月，李耀文(果照)、謝滴筠(果嵩)夫婦，雙雙於東初禪寺皈依於 聖嚴師父，
+                                自此以後有感於師父的悲願，便毅然決定承擔護法、弘法的重任，成為新州的首位鼓手代表。並於 1993 年 5 月 27 日舉行了新州護法會第一次會員聯誼會。
+                                新州護法會成立後一直以其夫婦所經營的紅木傢俱公司為共修道場，經過九年來多位師兄師姐的不斷努力推展護法、弘法的活動，原有的共修道場略顯不敷使用，
+                                終於在多位熱心護持會員的支持下，新州護法會在 2002 年 5 月 11 日，搬了新家，並恭請 聖嚴師父主持淨灑典禮。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide dark" style="background-image: url('images/slider/swiper/5.jpg');">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">法鼓山为中华民国佛教团体</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">
+                                法鼓山的祖庙是东初老人创建的“农禅寺”与“中华佛教文化馆”。农禅寺建造于1971年，
+                                以禅修为主、务农为生，于1975年定名为“农禅寺”。当时，东初老人推动台湾佛教文化、培养佛教人才，并每年皆举办冬令救济活动。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide dark" style="background-image: url('images/slider/swiper/6.jpg');">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">佛陀是福德智慧修行圆满者</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">
+                                大乘佛教主张，一切众生归依佛、法、僧三宝后，经过三大阿僧祇劫修行佛菩提道，
+                                都可能会成佛，所以成佛是透过累生累劫不断的精进修行菩萨五十二阶位，一一亲证了知三界一切法：四谛、八正道、十二因缘、六度万行，于妙觉菩萨位下生
+                                人间示现成佛，非今生今世可以成就，唯除佛或最后身菩萨示现八相成道而成佛</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+            <div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+        </div>
+
+        <script>
+            jQuery(document).ready(function($) {
+                var swiperSlider = new Swiper('.swiper-parent', {
+                    paginationClickable: false,
+                    slidesPerView: 1,
+                    grabCursor: true,
+                    loop: true,
+                    onSwiperCreated: function(swiper) {
+                        $('[data-caption-animate]').each(function() {
+                            var $toAnimateElement = $(this);
+                            var toAnimateDelay = $(this).attr('data-caption-delay');
+                            var toAnimateDelayTime = 0;
+                            if (toAnimateDelay) {
+                                toAnimateDelayTime = Number(toAnimateDelay) + 750;
+                            } else {
+                                toAnimateDelayTime = 750;
+                            }
+                            if (!$toAnimateElement.hasClass('animated')) {
+                                $toAnimateElement.addClass('not-animated');
+                                var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                                setTimeout(function() {
+                                    $toAnimateElement.removeClass('not-animated').addClass(elementAnimation + ' animated');
+                                }, toAnimateDelayTime);
+                            }
+                        });
+                        SEMICOLON.slider.swiperSliderMenu();
+                    },
+                    onSlideChangeStart: function(swiper) {
+                        $('[data-caption-animate]').each(function() {
+                            var $toAnimateElement = $(this);
+                            var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                            $toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+                        });
+                        SEMICOLON.slider.swiperSliderMenu();
+                    },
+                    onSlideChangeEnd: function(swiper) {
+                        $('#slider').find('.swiper-slide').each(function() {
+                            if ($(this).find('video').length > 0) {
+                                $(this).find('video').get(0).pause();
+                            }
+                            if ($(this).find('.yt-bg-player').length > 0) {
+                                $(this).find('.yt-bg-player').pauseYTP();
+                            }
+                        });
+                        $('#slider').find('.swiper-slide:not(".swiper-slide-active")').each(function() {
+                            if ($(this).find('video').length > 0) {
+                                if ($(this).find('video').get(0).currentTime != 0) $(this).find('video').get(0).currentTime = 0;
+                            }
+                            if ($(this).find('.yt-bg-player').length > 0) {
+                                $(this).find('.yt-bg-player').getPlayer().seekTo($(this).find('.yt-bg-player').attr('data-start'));
+                            }
+                        });
+                        if ($('#slider').find('.swiper-slide.swiper-slide-active').find('video').length > 0) {
+                            $('#slider').find('.swiper-slide.swiper-slide-active').find('video').get(0).play();
+                        }
+                        if ($('#slider').find('.swiper-slide.swiper-slide-active').find('.yt-bg-player').length > 0) {
+                            $('#slider').find('.swiper-slide.swiper-slide-active').find('.yt-bg-player').playYTP();
+                        }
+
+                        $('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function() {
+                            var $toAnimateElement = $(this);
+                            var toAnimateDelay = $(this).attr('data-caption-delay');
+                            var toAnimateDelayTime = 0;
+                            if (toAnimateDelay) {
+                                toAnimateDelayTime = Number(toAnimateDelay) + 300;
+                            } else {
+                                toAnimateDelayTime = 300;
+                            }
+                            if (!$toAnimateElement.hasClass('animated')) {
+                                $toAnimateElement.addClass('not-animated');
+                                var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+                                setTimeout(function() {
+                                    $toAnimateElement.removeClass('not-animated').addClass(elementAnimation + ' animated');
+                                }, toAnimateDelayTime);
+                            }
+                        });
+                    }
+                });
+
+                $('#slider-arrow-left').on('click', function(e) {
+                    e.preventDefault();
+                    swiperSlider.swipePrev();
+                });
+
+                $('#slider-arrow-right').on('click', function(e) {
+                    e.preventDefault();
+                    swiperSlider.swipeNext();
+                });
+            });
+        </script>
+
+        <a href="#" data-scrollto="#content" data-offset="100" class="dark one-page-arrow"><i
+                class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+    </section>
+
+    <!-- Content
+        ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <div class="container clearfix">
+                <div class="row clearfix">
+
+                    <div class="col-lg-5">
+                        <div class="heading-block topmargin">
+                            <h1>創辦人<br>聖嚴法師</h1>
+                        </div>
+                        <p class="lead">
+                            聖嚴法師於1930年出生於江蘇南通，1943年在狼山廣教禪寺出家，1949年從軍跟隨國民政府到臺灣，服役十年後，於東初老人座下再度披剃出家。聖嚴法師曾於高雄美濃山區閉關六年，
+                            之後遠赴日本東京立正大學深造，於1975年獲得文學博士學位。隨後應邀赴美弘化，先後擔任美國佛教會董事、副會長，紐約大覺寺住持及駐臺譯經院院長。東初老人於1978年圓寂後，聖嚴法師自美返臺承繼法務。</p>
+                    </div>
+
+                    <div class="col-lg-7">
+
+                        <div style="position: relative; margin-bottom: -60px;" class="ohidden" data-height-lg="626"
+                             data-height-md="626" data-height-sm="626" data-height-xs="626" data-height-xxs="626">
+                            <img src="images/ddmba-nj/1.png" style="position: absolute; top: 0; left: 0;"
+                                 data-animate="fadeInUp" data-delay="100" alt="shenyan">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section nobottommargin">
+                <div class="container clear-bottommargin clearfix">
+
+                    <div class="row topmargin-sm clearfix">
+
+                        <div class="col-md-4 bottommargin">
+                            <i class="i-plain color i-large icon-search2 inline-block" style="margin-bottom: 15px;"></i>
+                            <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                                <span class="before-heading">修行</span>
+                                <h4>國際知名禪師</h4>
+                            </div>
+                            <p>
+                                聖嚴法師為國際知名禪師，每年在亞、美、歐洲等地主持禪七、佛七，指導東、西方人士修行。法師也是一位卓越的教育家，除了於1989年創建法鼓山文教禪修體系之外，又相繼創辦「中華佛學研究所」、「僧伽大學」、「法鼓佛教學院」以及「法鼓大學」，為佛教教育開啟歷史新頁。</p>
+                        </div>
+
+                        <div class="col-md-4 bottommargin">
+                            <i class="i-plain color i-large icon-bulb inline-block" style="margin-bottom: 15px;"></i>
+                            <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                                <span class="before-heading">學術</span>
+                                <h4>國際佛教學術界知名學者</h4>
+                            </div>
+                            <p>聖嚴法師更是國際佛教學術界知名學者，經常應邀出席各項有關的國際學術會議。近年來，法師致力於國際弘化工作，參與國際性會談，促進宗教交流，提倡建立全球性倫理，致力於世界和平。</p>
+                        </div>
+
+                        <div class="col-md-4 bottommargin">
+                            <i class="i-plain color i-large icon-like inline-block" style="margin-bottom: 15px;"></i>
+                            <div class="heading-block nobottomborder" style="margin-bottom: 15px;">
+                                <span class="before-heading">其他風采</span>
+                                <h4>思想家、作家</h4>
+                            </div>
+                            <p>
+                                聖嚴法師除了是備受推崇的宗教家，更是一位思想家、作家，曾獲臺灣《天下》雜誌遴選為「四百年來臺灣最具影響力的五十位人士」之一。著作豐富，至今已有中、英、日文著作百餘種，其中部分禪修著作已被翻譯成數十種語文。</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container clearfix">
+
+                <div class="row topmargin-lg bottommargin-sm">
+
+                    <div class="heading-block center">
+                        <h2>關於法鼓山</h2>
+                        <span class="divcenter">法鼓山，为中华民国的佛教团体，在台湾佛教五大山头里面评价优等。创建者为圣严法师，对华人社会有巨大的影响力，也曾代表台湾人在联合国发表宗教大同的和平宣言。</span>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 bottommargin">
+
+                        <div class="feature-box fbox-right topmargin" data-animate="fadeIn">
+                            <div class="fbox-icon">
+                                <a href="#"><i class="icon-line-heart"></i></a>
+                            </div>
+                            <h3>创建人</h3>
+                            <p>圣严法师承东初老和尚之遗志，于1977年东初老人圆寂后接掌佛教弘化事务。</p>
+                        </div>
+
+                        <div class="feature-box fbox-right topmargin" data-animate="fadeIn" data-delay="200">
+                            <div class="fbox-icon">
+                                <a href="#"><i class="icon-line-paper"></i></a>
+                            </div>
+                            <h3>开山</h3>
+                            <p>法鼓山第一期工程动土典礼于1993年举行。其后为了进一步落实教育的理念，在同年，法鼓大学筹备处正式成立。</p>
+                        </div>
+
+                        <div class="feature-box fbox-right topmargin" data-animate="fadeIn" data-delay="400">
+                            <div class="fbox-icon">
+                                <a href="#"><i class="icon-line-layers"></i></a>
+                            </div>
+                            <h3>命名</h3>
+                            <p>“法鼓”一词，佛典中有多处提及。如《妙法莲华经》云：“惟愿天人尊，转无上法轮，击于大法鼓，而吹大法螺，普及大法雨，度无量众生，我等咸归请，当演深远音。”</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 hidden-sm bottommargin center">
+                        <img src="images/ddmba-nj/2.png" alt="iphone 2">
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 bottommargin">
+
+                        <div class="feature-box topmargin" data-animate="fadeIn">
+                            <div class="fbox-icon">
+                                <a href="#"><i class="icon-line-power"></i></a>
+                            </div>
+                            <h3>镇山物</h3>
+                            <p>2006年12月23日在法鼓山世界佛教教育园区，举行法鼓山钟楼的落成仪式。</p>
+                        </div>
+
+                        <div class="feature-box topmargin" data-animate="fadeIn" data-delay="200">
+                            <div class="fbox-icon">
+                                <a href="#"><i class="icon-line-check"></i></a>
+                            </div>
+                            <h3>众愿成就</h3>
+                            <p>法鼓山没有大资金，但产生的影响力却深远广大，这就是我们的特色。法鼓山为社会带动良好风气，提供有利的修行方法，这是我们的贡献。</p>
+                        </div>
+
+                        <div class="feature-box topmargin" data-animate="fadeIn" data-delay="400">
+                            <div class="fbox-icon">
+                                <a href="#"><i class="icon-bulb"></i></a>
+                            </div>
+                            <h3>僧团</h3>
+                            <p>
+                                僧团成立于公元1980年。在编制上则设有都监一位、副都监一位，并设有贤首会、都监院、事务院、禅修推广中心、佛学推广中心、关怀中心、教育院、僧伽大学佛学院、事业体等单位，是法鼓山目前的核心组织机构。</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row clearfix common-height">
+
+                <div class="col-md-6 center col-padding"
+                     style="background: url('images/services/main-bg.jpg') center center no-repeat; background-size: cover;">
+                    <div>&nbsp;</div>
+                </div>
+
+                <div class="col-md-6 center col-padding" style="background-color: #F5F5F5;">
+                    <div>
+                        <div class="heading-block nobottomborder">
+                            <span class="before-heading color">Easily Understandable &amp; Customizable.</span>
+                            <h3>Walkthrough Videos &amp; Demos</h3>
+                        </div>
+
+                        <div class="center bottommargin">
+                            <a href="http://vimeo.com/101373765" data-lightbox="iframe" style="position: relative;">
+                                <img src="images/services/video.jpg" alt="Video">
+                                <span class="i-overlay nobg"><img src="images/icons/video-play.png" alt="Play"></span>
+                            </a>
+                        </div>
+                        <p class="lead nobottommargin">Democracy inspire breakthroughs, Rosa Parks; inspiration raise
+                            awareness natural resources. Governance impact; transformative donation philanthropy,
+                            respect reproductive.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row clearfix bottommargin-lg common-height">
+
+                <div class="col-md-3 col-sm-6 dark center col-padding" style="background-color: #515875;">
+                    <div>
+                        <i class="i-plain i-xlarge divcenter icon-line2-directions"></i>
+                        <div class="counter counter-lined"><span data-from="100" data-to="846"
+                                                                 data-refresh-interval="50" data-speed="2000"></span>K
+                        </div>
+                        <h5>Lines of Codes</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 dark center col-padding" style="background-color: #576F9E;">
+                    <div>
+                        <i class="i-plain i-xlarge divcenter icon-line2-graph"></i>
+                        <div class="counter counter-lined"><span data-from="3000" data-to="21500"
+                                                                 data-refresh-interval="100" data-speed="2500"></span>
+                        </div>
+                        <h5>KBs of HTML Files</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 dark center col-padding" style="background-color: #6697B9;">
+                    <div>
+                        <i class="i-plain i-xlarge divcenter icon-line2-layers"></i>
+                        <div class="counter counter-lined"><span data-from="10" data-to="408" data-refresh-interval="25"
+                                                                 data-speed="3500"></span></div>
+                        <h5>No. of Templates</h5>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 dark center col-padding" style="background-color: #88C3D8;">
+                    <div>
+                        <i class="i-plain i-xlarge divcenter icon-line2-clock"></i>
+                        <div class="counter counter-lined"><span data-from="60" data-to="1400"
+                                                                 data-refresh-interval="30" data-speed="2700"></span>
+                        </div>
+                        <h5>Hours of Coding</h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container clearfix">
+
+                <div class="col_one_third">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-monitor"></i></a>
+                        </div>
+                        <h3>Responsive Layout</h3>
+                        <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+                    </div>
+                </div>
+
+                <div class="col_one_third">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="200">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-eye"></i></a>
+                        </div>
+                        <h3>Retina Ready Graphics</h3>
+                        <p>Looks beautiful &amp; ultra-sharp on Retina Displays with Retina Icons, Fonts &amp;
+                            Images.</p>
+                    </div>
+                </div>
+
+                <div class="col_one_third col_last">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="400">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-star"></i></a>
+                        </div>
+                        <h3>Powerful Performance</h3>
+                        <p>Optimized code that are completely customizable and deliver unmatched fast performance.</p>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="col_one_third">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-play"></i></a>
+                        </div>
+                        <h3>HTML5 Video</h3>
+                        <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width
+                            Background.</p>
+                    </div>
+                </div>
+
+                <div class="col_one_third">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-params"></i></a>
+                        </div>
+                        <h3>Parallax Support</h3>
+                        <p>Display your Content attractively using Parallax Sections that have unlimited customizable
+                            areas.</p>
+                    </div>
+                </div>
+
+                <div class="col_one_third col_last">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-circle-check"></i></a>
+                        </div>
+                        <h3>Endless Possibilities</h3>
+                        <p>Complete control on each &amp; every element that provides endless customization
+                            possibilities.</p>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="col_one_third bottommargin-sm">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-bulb"></i></a>
+                        </div>
+                        <h3>Light &amp; Dark Color Schemes</h3>
+                        <p>Change your Website's Primary Scheme instantly by simply adding the dark class to the
+                            body.</p>
+                    </div>
+                </div>
+
+                <div class="col_one_third bottommargin-sm">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-heart2"></i></a>
+                        </div>
+                        <h3>Boxed &amp; Wide Layouts</h3>
+                        <p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>
+                    </div>
+                </div>
+
+                <div class="col_one_third bottommargin-sm col_last">
+                    <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-note"></i></a>
+                        </div>
+                        <h3>Extensive Documentation</h3>
+                        <p>We have covered each &amp; everything in our Documentation including Videos &amp;
+                            Screenshots.</p>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+            </div>
+
+            <div class="section topmargin nobottommargin nobottomborder">
+                <div class="container clearfix">
+                    <div class="heading-block center nomargin">
+                        <h3>Our Latest Works</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="portfolio" class="portfolio-nomargin portfolio-notitle portfolio-full clearfix">
+
+                <article class="portfolio-item pf-media pf-icons">
+                    <div class="portfolio-image">
+                        <a href="portfolio-single.html">
+                            <img src="images/portfolio/4/1.jpg" alt="Open Imagination">
+                        </a>
+                        <div class="portfolio-overlay">
+                            <a href="images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i
+                                    class="icon-line-plus"></i></a>
+                            <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single.html">Open Imagination</a></h3>
+                        <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                    </div>
+                </article>
+
+                <article class="portfolio-item pf-illustrations">
+                    <div class="portfolio-image">
+                        <a href="portfolio-single.html">
+                            <img src="images/portfolio/4/2.jpg" alt="Locked Steel Gate">
+                        </a>
+                        <div class="portfolio-overlay">
+                            <a href="images/portfolio/full/2.jpg" class="left-icon" data-lightbox="image"><i
+                                    class="icon-line-plus"></i></a>
+                            <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single.html">Locked Steel Gate</a></h3>
+                        <span><a href="#">Illustrations</a></span>
+                    </div>
+                </article>
+
+                <article class="portfolio-item pf-graphics pf-uielements">
+                    <div class="portfolio-image">
+                        <a href="#">
+                            <img src="images/portfolio/4/3.jpg" alt="Mac Sunglasses">
+                        </a>
+                        <div class="portfolio-overlay">
+                            <a href="http://vimeo.com/89396394" class="left-icon" data-lightbox="iframe"><i
+                                    class="icon-line-play"></i></a>
+                            <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
+                        <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+                    </div>
+                </article>
+
+                <article class="portfolio-item pf-icons pf-illustrations">
+                    <div class="portfolio-image">
+                        <a href="portfolio-single.html">
+                            <img src="images/portfolio/4/4.jpg" alt="Open Imagination">
+                        </a>
+                        <div class="portfolio-overlay" data-lightbox="gallery">
+                            <a href="images/portfolio/full/4.jpg" class="left-icon" data-lightbox="gallery-item"><i
+                                    class="icon-line-stack-2"></i></a>
+                            <a href="images/portfolio/full/4-1.jpg" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="portfolio-single-gallery.html" class="right-icon"><i
+                                    class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single-gallery.html">Morning Dew</a></h3>
+                        <span><a href="#"><a href="#">Icons</a>, <a href="#">Illustrations</a></span>
+                    </div>
+                </article>
+
+                <article class="portfolio-item pf-uielements pf-media">
+                    <div class="portfolio-image">
+                        <a href="portfolio-single.html">
+                            <img src="images/portfolio/4/5.jpg" alt="Console Activity">
+                        </a>
+                        <div class="portfolio-overlay">
+                            <a href="images/portfolio/full/5.jpg" class="left-icon" data-lightbox="image"><i
+                                    class="icon-line-plus"></i></a>
+                            <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single.html">Console Activity</a></h3>
+                        <span><a href="#">UI Elements</a>, <a href="#">Media</a></span>
+                    </div>
+                </article>
+
+                <article class="portfolio-item pf-graphics pf-illustrations">
+                    <div class="portfolio-image">
+                        <a href="portfolio-single.html">
+                            <img src="images/portfolio/4/6.jpg" alt="Open Imagination">
+                        </a>
+                        <div class="portfolio-overlay" data-lightbox="gallery">
+                            <a href="images/portfolio/full/6.jpg" class="left-icon" data-lightbox="gallery-item"><i
+                                    class="icon-line-stack-2"></i></a>
+                            <a href="images/portfolio/full/6-1.jpg" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="images/portfolio/full/6-2.jpg" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="images/portfolio/full/6-3.jpg" class="hidden" data-lightbox="gallery-item"></a>
+                            <a href="portfolio-single-gallery.html" class="right-icon"><i
+                                    class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single-gallery.html">Shake It!</a></h3>
+                        <span><a href="#">Illustrations</a>, <a href="#">Graphics</a></span>
+                    </div>
+                </article>
+
+                <article class="portfolio-item pf-uielements pf-icons">
+                    <div class="portfolio-image">
+                        <a href="portfolio-single-video.html">
+                            <img src="images/portfolio/4/7.jpg" alt="Backpack Contents">
+                        </a>
+                        <div class="portfolio-overlay">
+                            <a href="http://www.youtube.com/watch?v=kuceVNBTJio" class="left-icon"
+                               data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                            <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single-video.html">Backpack Contents</a></h3>
+                        <span><a href="#">UI Elements</a>, <a href="#">Icons</a></span>
+                    </div>
+                </article>
+
+                <article class="portfolio-item pf-graphics">
+                    <div class="portfolio-image">
+                        <a href="portfolio-single.html">
+                            <img src="images/portfolio/4/8.jpg" alt="Sunset Bulb Glow">
+                        </a>
+                        <div class="portfolio-overlay">
+                            <a href="images/portfolio/full/8.jpg" class="left-icon" data-lightbox="image"><i
+                                    class="icon-line-plus"></i></a>
+                            <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="portfolio-single.html">Sunset Bulb Glow</a></h3>
+                        <span><a href="#">Graphics</a></span>
+                    </div>
+                </article>
+
+            </div>
+
+            <script type="text/javascript">
+
+                jQuery(window).load(function() {
+
+                    var $container = $('#portfolio');
+
+                    $container.isotope({
+                        transitionDuration: '0.65s',
+                        masonry: {
+                            columnWidth: $container.find('.portfolio-item:not(.wide)')[0]
+                        }
+                    });
+
+                    $('#page-menu a').click(function() {
+                        $('#page-menu li').removeClass('current');
+                        $(this).parent('li').addClass('current');
+                        var selector = $(this).attr('data-filter');
+                        $container.isotope({ filter: selector });
+                        return false;
+                    });
+
+                    $(window).resize(function() {
+                        $container.isotope('layout');
+                    });
+
+                });
+
+            </script>
+
+            <div class="clear"></div>
+
+            <a href="portfolio.html" class="button button-full button-dark center tright bottommargin-lg">
+                <div class="container clearfix">
+                    More than 100+ predefined Portfolio Grid Layouts. <strong>See More</strong> <i
+                        class="icon-caret-right" style="top:4px;"></i>
+                </div>
+            </a>
+
+            <div class="container clearfix">
+
+                <div class="col_one_third bottommargin-sm center">
+                    <img data-animate="fadeInLeft" src="images/services/iphone6.png" alt="Iphone">
+                </div>
+
+                <div class="col_two_third bottommargin-sm col_last">
+
+                    <div class="heading-block topmargin-sm">
+                        <h3>Optimized for Mobile &amp; Touch Enabled Devices.</h3>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quod consequuntur quibusdam, enim
+                        expedita sed quia nesciunt incidunt accusamus necessitatibus modi adipisci officia libero
+                        accusantium esse hic, obcaecati, ullam, laboriosam!</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere
+                        officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum
+                        magnam.</p>
+
+                    <a href="#"
+                       class="button button-border button-dark button-rounded button-large noleftmargin topmargin-sm">Learn
+                        more</a>
+
+                </div>
+
+            </div>
+
+            <div class="section parallax dark nobottommargin"
+                 style="background-image: url('images/services/home-testi-bg.jpg'); padding: 100px 0;"
+                 data-stellar-background-ratio="0.4">
+
+                <div class="heading-block center">
+                    <h3>What Clients Say?</h3>
+                </div>
+
+                <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
+                    <div class="flexslider">
+                        <div class="slider-wrap">
+                            <div class="slide">
+                                <div class="testi-image">
+                                    <a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
+                                </div>
+                                <div class="testi-content">
+                                    <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia
+                                        eaque. Repellendus, vero numquam?</p>
+                                    <div class="testi-meta">
+                                        Steve Jobs
+                                        <span>Apple Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="testi-image">
+                                    <a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+                                </div>
+                                <div class="testi-content">
+                                    <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos
+                                        obcaecati id culpa corporis molestias.</p>
+                                    <div class="testi-meta">
+                                        Collis Ta'eed
+                                        <span>Envato Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="testi-image">
+                                    <a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+                                </div>
+                                <div class="testi-content">
+                                    <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam
+                                        cum libero illo rerum!</p>
+                                    <div class="testi-meta">
+                                        John Doe
+                                        <span>XYZ Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section notopmargin notopborder">
+                <div class="container clearfix">
+                    <div class="heading-block center nomargin">
+                        <h3>Latest from the Blog</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container clear-bottommargin clearfix">
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-6 bottommargin">
+                        <div class="ipost clearfix">
+                            <div class="entry-image">
+                                <a href="#"><img class="image_fade" src="images/magazine/thumb/1.jpg" alt="Image"></a>
+                            </div>
+                            <div class="entry-title">
+                                <h3><a href="blog-single.html">Bloomberg smart cities; change-makers economic
+                                    security</a></h3>
+                            </div>
+                            <ul class="entry-meta clearfix">
+                                <li><i class="icon-calendar3"></i> 13th Jun 2014</li>
+                                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 53</a></li>
+                            </ul>
+                            <div class="entry-content">
+                                <p>Prevention effect, advocate dialogue rural development lifting people up community
+                                    civil society. Catalyst, grantees leverage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 bottommargin">
+                        <div class="ipost clearfix">
+                            <div class="entry-image">
+                                <a href="#"><img class="image_fade" src="images/magazine/thumb/2.jpg" alt="Image"></a>
+                            </div>
+                            <div class="entry-title">
+                                <h3><a href="blog-single.html">Medicine new approaches communities, outcomes
+                                    partnership</a></h3>
+                            </div>
+                            <ul class="entry-meta clearfix">
+                                <li><i class="icon-calendar3"></i> 24th Feb 2014</li>
+                                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 17</a></li>
+                            </ul>
+                            <div class="entry-content">
+                                <p>Cross-agency coordination clean water rural, promising development turmoil inclusive
+                                    education transformative community.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 bottommargin">
+                        <div class="ipost clearfix">
+                            <div class="entry-image">
+                                <a href="#"><img class="image_fade" src="images/magazine/thumb/3.jpg" alt="Image"></a>
+                            </div>
+                            <div class="entry-title">
+                                <h3><a href="blog-single.html">Significant altruism planned giving insurmountable
+                                    challenges liberal</a></h3>
+                            </div>
+                            <ul class="entry-meta clearfix">
+                                <li><i class="icon-calendar3"></i> 30th Dec 2014</li>
+                                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
+                            </ul>
+                            <div class="entry-content">
+                                <p>Micro-finance; vaccines peaceful contribution citizens of change generosity. Measures
+                                    design thinking accelerate progress medical initiative.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 bottommargin">
+                        <div class="ipost clearfix">
+                            <div class="entry-image">
+                                <a href="#"><img class="image_fade" src="images/magazine/thumb/4.jpg" alt="Image"></a>
+                            </div>
+                            <div class="entry-title">
+                                <h3><a href="blog-single.html">Compassion conflict resolution, progressive; tackle</a>
+                                </h3>
+                            </div>
+                            <ul class="entry-meta clearfix">
+                                <li><i class="icon-calendar3"></i> 15th Jan 2014</li>
+                                <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 54</a></li>
+                            </ul>
+                            <div class="entry-content">
+                                <p>Community health workers best practices, effectiveness meaningful work The Elders
+                                    fairness. Our ambitions local solutions globalization.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="container clearfix">
+
+                    <div class="row topmargin-sm">
+
+                        <div class="heading-block center">
+                            <h3>Meet Our Team</h3>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+
+                            <div class="team">
+                                <div class="team-image">
+                                    <img src="images/team/3.jpg" alt="John Doe">
+                                </div>
+                                <div class="team-desc team-desc-bg">
+                                    <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                                        <i class="icon-gplus"></i>
+                                        <i class="icon-gplus"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+
+                            <div class="team">
+                                <div class="team-image">
+                                    <img src="images/team/2.jpg" alt="Josh Clark">
+                                </div>
+                                <div class="team-desc team-desc-bg">
+                                    <div class="team-title"><h4>Josh Clark</h4><span>Co-Founder</span></div>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                                        <i class="icon-gplus"></i>
+                                        <i class="icon-gplus"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+
+                            <div class="team">
+                                <div class="team-image">
+                                    <img src="images/team/8.jpg" alt="Mary Jane">
+                                </div>
+                                <div class="team-desc team-desc-bg">
+                                    <div class="team-title"><h4>Mary Jane</h4><span>Sales</span></div>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                                        <i class="icon-gplus"></i>
+                                        <i class="icon-gplus"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 bottommargin">
+
+                            <div class="team">
+                                <div class="team-image">
+                                    <img src="images/team/4.jpg" alt="Nix Maxwell">
+                                </div>
+                                <div class="team-desc team-desc-bg">
+                                    <div class="team-title"><h4>Nix Maxwell</h4><span>Support</span></div>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"
+                                       class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                                        <i class="icon-twitter"></i>
+                                        <i class="icon-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                                        <i class="icon-gplus"></i>
+                                        <i class="icon-gplus"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container clearfix">
+
+                <div id="oc-clients" class="owl-carousel image-carousel">
+
+                    <div class="oc-item"><a href="#"><img src="images/clients/1.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/2.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/3.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/4.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/5.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/6.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/7.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/8.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/9.png" alt="Clients"></a></div>
+                    <div class="oc-item"><a href="#"><img src="images/clients/10.png" alt="Clients"></a></div>
+
+                </div>
+
+                <script type="text/javascript">
+
+                    jQuery(document).ready(function($) {
+
+                        var ocClients = $("#oc-clients");
+
+                        ocClients.owlCarousel({
+                            margin: 60,
+                            loop: true,
+                            nav: false,
+                            autoplay: true,
+                            dots: false,
+                            autoplayHoverPause: true,
+                            responsive: {
+                                0: { items: 2 },
+                                480: { items: 3 },
+                                768: { items: 4 },
+                                992: { items: 5 },
+                                1200: { items: 6 }
+                            }
+                        });
+
+                    });
+
+                </script>
+
+            </div>
+
+        </div>
+
+    </section><!-- #content end -->
+
+    <!-- Footer
+        ============================================= -->
+    <footer id="footer" class="dark">
+
+        <div class="container">
+
+            <!-- Footer Widgets
+                    ============================================= -->
+            <div class="footer-widgets-wrap clearfix">
+
+                <div class="col_two_third">
+
+                    <div class="col_one_third">
+
+                        <div class="widget clearfix">
+
+                            <img src="images/footer-widget-logo.png" alt="" class="footer-logo">
+
+                            <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp;
+                                <strong>Flexible</strong> Design Standards.</p>
+
+                            <div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+                                <address>
+                                    <strong>Headquarters:</strong><br>
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                </address>
+                                <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
+                                <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
+                                <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_one_third">
+
+                        <div class="widget widget_links clearfix">
+
+                            <h4>Blogroll</h4>
+
+                            <ul>
+                                <li><a href="http://codex.wordpress.org/">Documentation</a></li>
+                                <li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+                                <li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+                                <li><a href="http://wordpress.org/support/">Support Forums</a></li>
+                                <li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+                                <li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
+                                <li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_one_third col_last">
+
+                        <div class="widget clearfix">
+                            <h4>Recent Posts</h4>
+
+                            <div id="post-list-footer">
+                                <div class="spost clearfix">
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                        </div>
+                                        <ul class="entry-meta">
+                                            <li>10th July 2014</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="spost clearfix">
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+                                        </div>
+                                        <ul class="entry-meta">
+                                            <li>10th July 2014</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="spost clearfix">
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                                        </div>
+                                        <ul class="entry-meta">
+                                            <li>10th July 2014</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col_one_third col_last">
+
+                    <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                        <div class="row">
+
+                            <div class="col-md-6 bottommargin-sm">
+                                <div class="counter counter-small"><span data-from="50" data-to="15065421"
+                                                                         data-refresh-interval="80" data-speed="3000"
+                                                                         data-comma="true"></span></div>
+                                <h5 class="nobottommargin">Total Downloads</h5>
+                            </div>
+
+                            <div class="col-md-6 bottommargin-sm">
+                                <div class="counter counter-small"><span data-from="100" data-to="18465"
+                                                                         data-refresh-interval="50" data-speed="2000"
+                                                                         data-comma="true"></span></div>
+                                <h5 class="nobottommargin">Clients</h5>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="widget subscribe-widget clearfix">
+                        <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp;
+                            Inside Scoops:</h5>
+                        <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
+                        <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post"
+                              class="nobottommargin">
+                            <div class="input-group divcenter">
+                                <span class="input-group-addon"><i class="icon-email2"></i></span>
+                                <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email"
+                                       class="form-control required email" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button class="btn btn-success" type="submit">Subscribe</button>
+									</span>
+                            </div>
+                        </form>
+                        <script type="text/javascript">
+                            jQuery("#widget-subscribe-form").validate({
+                                submitHandler: function(form) {
+                                    jQuery(form).find('.input-group-addon').find('.icon-email2').removeClass('icon-email2').addClass('icon-line-loader icon-spin');
+                                    jQuery(form).ajaxSubmit({
+                                        target: '#widget-subscribe-form-result',
+                                        success: function() {
+                                            jQuery(form).find('.input-group-addon').find('.icon-line-loader').removeClass('icon-line-loader icon-spin').addClass('icon-email2');
+                                            jQuery('#widget-subscribe-form').find('.form-control').val('');
+                                            jQuery('#widget-subscribe-form-result').attr('data-notify-msg', jQuery('#widget-subscribe-form-result').html()).html('');
+                                            SEMICOLON.widget.notifications(jQuery('#widget-subscribe-form-result'));
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
+                    </div>
+
+                    <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                        <div class="row">
+
+                            <div class="col-md-6 clearfix bottommargin-sm">
+                                <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin"
+                                   style="margin-right: 10px;">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on
+                                        Facebook
+                                    </small>
+                                </a>
+                            </div>
+                            <div class="col-md-6 clearfix">
+                                <a href="#" class="social-icon si-dark si-colored si-rss nobottommargin"
+                                   style="margin-right: 10px;">
+                                    <i class="icon-rss"></i>
+                                    <i class="icon-rss"></i>
+                                </a>
+                                <a href="#">
+                                    <small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS
+                                        Feeds
+                                    </small>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div><!-- .footer-widgets-wrap end -->
+
+        </div>
+
+        <!-- Copyrights
+              ============================================= -->
+        <div id="copyrights">
+
+            <div class="container clearfix">
+
+                <div class="col_half">
+                    Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+                    <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                </div>
+
+                <div class="col_half col_last tright">
+                    <div class="fright clearfix">
+                        <a href="#" class="social-icon si-small si-borderless si-facebook">
+                            <i class="icon-facebook"></i>
+                            <i class="icon-facebook"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-twitter">
+                            <i class="icon-twitter"></i>
+                            <i class="icon-twitter"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-gplus">
+                            <i class="icon-gplus"></i>
+                            <i class="icon-gplus"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                            <i class="icon-pinterest"></i>
+                            <i class="icon-pinterest"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-vimeo">
+                            <i class="icon-vimeo"></i>
+                            <i class="icon-vimeo"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-github">
+                            <i class="icon-github"></i>
+                            <i class="icon-github"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-yahoo">
+                            <i class="icon-yahoo"></i>
+                            <i class="icon-yahoo"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-linkedin">
+                            <i class="icon-linkedin"></i>
+                            <i class="icon-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i
+                        class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i
+                        class="icon-skype2"></i> CanvasOnSkype
+                </div>
+
+            </div>
+
+        </div><!-- #copyrights end -->
+
+    </footer><!-- #footer end -->
+
+</div><!-- #wrapper end -->
+
