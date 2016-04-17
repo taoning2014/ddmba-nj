@@ -1,0 +1,21 @@
+<md-toolbar class="">
+    <div class="md-toolbar-tools">
+        <h2 class="md-flex">Add Article</h2>
+    </div>
+</md-toolbar>
+
+<md-content layout-padding>
+    <div>
+        <form name="addArticle" action="/api/post/article" method="post" layout="column">
+            <md-input-container>
+                <label>Title</label>
+                <input name="title">
+            </md-input-container>
+                    <textarea placeholder="Add content here"
+                              name="content"
+                              rows="25" cols="83"
+                              md-select-on-focus></textarea>
+            <md-button class="md-primary" type="submit">submit</md-button>
+        </form>
+    </div>
+</md-content>

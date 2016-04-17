@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
 
 router.get('/login*', function(req, res) {
   res.render('partials/login');
@@ -14,11 +13,12 @@ router.get('/selectAction*', function(req, res) {
   res.render('partials/selectAction');
 });
 
-router.get('/editHomePage.html', function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/editHomePage.html'));
+router.get('/editHomePage*', function(req, res) {
+  res.render('partials/editHomePage');
 });
 
-router.get('/addArticlePage.html', function(req, res) {
-  res.sendFile(path.join(__dirname, '../views/addArticlePage.html'));
+router.get('/addArticlePage*', function(req, res) {
+  res.render('partials/addArticlePage');
 });
+
 module.exports = router;
