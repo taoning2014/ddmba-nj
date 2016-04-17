@@ -2,23 +2,23 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/login*', function(req, res) {
-  res.render('partials/login');
+  res.render('partials/admin/login');
 });
 
 router.get('/fail*', function(req, res) {
-  res.render('partials/fail');
+  res.render('partials/admin/fail');
 });
 
 router.get('/selectAction*', function(req, res) {
-  res.render('partials/selectAction');
+  res.render('partials/admin/selectAction');
 });
 
 router.get('/editHomePage*', function(req, res) {
-  res.render('partials/editHomePage');
+  res.render('partials/admin/editHomePage');
 });
 
 router.get('/addArticlePage*', function(req, res) {
-  res.render('partials/addArticlePage');
+  res.render('partials/admin/addArticlePage');
 });
 
 module.exports = router;
