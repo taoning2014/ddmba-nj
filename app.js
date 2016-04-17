@@ -11,9 +11,8 @@ var errorhandler = require('errorhandler');
 
 exphbs  = require('express-handlebars');
 
+var api = require('./routes/api');
 var admin = require('./routes/admin');
-var authlocal = require('./routes/auth-local');
-var content = require('./routes/content');
 var client = require('./routes/client');
 
 var app = express();
@@ -42,9 +41,8 @@ app.use(require('express-session')({
 // static resource for static page and angular
 app.use(express.static(__dirname + '/public'));
 
+app.use('/', api);
 app.use('/', admin);
-app.use('/api/auth', authlocal);
-app.use('/', content);
 app.use('/', client);
 
 // Handle 404
