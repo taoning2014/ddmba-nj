@@ -14,7 +14,7 @@ var admin = require('./routes/admin');
 var client = require('./routes/client');
 
 var app = express();
-var config = require('./config.json')[app.get('env')];
+//var config = require('./config.json')[app.get('env')];
 
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || config.mongo_url;
 
