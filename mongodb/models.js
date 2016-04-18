@@ -3,7 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 
 var config = require('../config.json')[app.get('env')];
-var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || config.mongo_url;
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || process.env.MONGODB_URI || config.mongo_url;
 
 var User;
 var Article;

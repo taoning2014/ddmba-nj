@@ -16,7 +16,7 @@ var client = require('./routes/client');
 var app = express();
 //var config = require('./config.json')[app.get('env')];
 
-var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || config.mongo_url;
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || process.env.MONGODB_URI || config.mongo_url;
 
 app.engine('handlebars', exphbs({ defaultLayout: 'editor' }));
 app.set('view engine', 'handlebars');
