@@ -75,6 +75,4 @@ modules/views/
 # --------------------
 # custom
 # --------------------
-config.json
-public/angular/
-angular/bower_components/
+

@@ -1,7 +1,5 @@
 var express = require('express');
-var app = express();
-var path = require('path');
-var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon');
 // var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
@@ -15,9 +13,8 @@ var api = require('./routes/api');
 var admin = require('./routes/admin');
 var client = require('./routes/client');
 
-var config = require('./config.json')[app.get('env')];
-
 var app = express();
+var config = require('./config.json')[app.get('env')];
 
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || config.mongo_url;
 
