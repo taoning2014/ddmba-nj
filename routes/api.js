@@ -8,7 +8,7 @@ var randomInt = function() {
   return Math.floor(Math.random() * 6 + 1);
 }
 
-router.post('/api/post/article/:_id?', function(req, res) {
+router.post('/post/article/:_id?', function(req, res) {
 
   // _id exist means edit existed article
   if (req.params._id) {
@@ -18,7 +18,7 @@ router.post('/api/post/article/:_id?', function(req, res) {
       content: req.body.content
     }, function() {
       console.log('Update success!');
-      res.redirect('/selectActionWithPublishSuccess');
+      res.redirect('/admin/selectActionWithPublishSuccess');
     });
   } else {
     article = new Article({
@@ -28,17 +28,17 @@ router.post('/api/post/article/:_id?', function(req, res) {
     });
     article.save(function() {
       console.log('save to db');
-      res.redirect('/selectActionWithPublishSuccess');
+      res.redirect('/admin/selectActionWithPublishSuccess');
     });
   }
 });
 
-router.get('/api/delete/article/:_id', function(req, res) {
-  console.log('hit /api/delete/article');
+router.get('/delete/article/:_id', function(req, res) {
+  console.log('hit /delete/article');
   console.log('params: ', req.params._id);
   Article.remove({ _id: req.params._id }, function() {
     console.log('delete success');
-    res.redirect('/addArticlePage');
+    res.redirect('/admin/addArticlePage');
   });
 });
 

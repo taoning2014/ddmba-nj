@@ -36,9 +36,9 @@ app.use(require('express-session')({
 }));
 app.use(express.static(__dirname + '/public'));
 
-app.use('/', api);
-app.use('/', admin);
-app.use('/', client);
+app.use('/api', api);
+app.use('/admin', admin);
+app.use('/client', client);
 
 // Handle 404
 app.use(function(req, res) {

@@ -83,7 +83,7 @@ router.get('/editArticlePage/:_id', function(req, res) {
 router.post('/login',
   passport.authenticate('local', { failureRedirect: '/fail' }),
   function(req, res) {
-    res.redirect('/selectAction');
+    res.redirect('/admin/selectAction');
   });
 
 router.get('/logout', function(req, res) {
