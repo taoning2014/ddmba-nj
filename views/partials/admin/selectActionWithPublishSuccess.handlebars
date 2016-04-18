@@ -1,19 +1,16 @@
 <md-toolbar>
-    <div class="md-toolbar-tools">
-        <h2>Choose an action</h2>
-    </div>
+  <div class="md-toolbar-tools">
+    <h2>Choose an action</h2>
+  </div>
 </md-toolbar>
-{{#if hint}}
-    <md-toolbar class="md-hue-1">
-        <div class="md-toolbar-tools">
-            <h2 class="md-flex">{{hint}}</h2>
-        </div>
-    </md-toolbar>
-{{/if}}
+<md-toolbar class="md-hue-1">
+  <div class="md-toolbar-tools">
+    <h2 class="md-flex">Article publish success! </h2>
+  </div>
+</md-toolbar>
 <md-content flex layout-padding>
-  {{#if hint}}
-      <md-button class="md-primary" href="/blogs"> see article here </md-button> </br>
-  {{/if}}
-    <md-button href="/editHomePage" class="md-raised"> Edit home page</md-button>
-    <md-button href="/addArticlePage" class="md-raised"> Add article</md-button>
+  <md-button class="md-primary" href="/blogs"> see article here</md-button>
+  </br>
+  <md-button href="/editHomePage" class="md-raised"> Edit home page</md-button>
+  <md-button href="/addArticlePage" class="md-raised"> Add article</md-button>
 </md-content>

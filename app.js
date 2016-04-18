@@ -1,44 +1,38 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+// var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var errorhandler = require('errorhandler');
-
-exphbs  = require('express-handlebars');
+var exphbs = require('express-handlebars');
 
 var api = require('./routes/api');
 var admin = require('./routes/admin');
 var client = require('./routes/client');
 
+var config = require('./config.json')[app.get('env')];
+
 var app = express();
 
-var config = require('./config.json')[app.get('env')];
-console.log('config obj', config);
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || config.mongo_url;
 
-// set up handlerbar
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'hbs');
-
-app.engine('handlebars', exphbs({defaultLayout: 'editor'}));
+app.engine('handlebars', exphbs({ defaultLayout: 'editor' }));
 app.set('view engine', 'handlebars');
 
 app.use(cors());
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // app.use(logger('dev'));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(require('express-session')({
   secret: 'ddmba take me home',
   store: new MongoStore({ url: uristring })
 }));
-// static resource for static page and angular
 app.use(express.static(__dirname + '/public'));
 
 app.use('/', api);

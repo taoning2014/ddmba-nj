@@ -1,6 +1,8 @@
 {
   "extends": "airbnb/legacy",
-  "plugins": ["angular"],
+  "plugins": [
+    "angular"
+  ],
   "env": {
     "browser": true,
     "node": true
@@ -16,7 +18,11 @@
     "func-names": 1,
     "quotes": 0,
     "no-param-reassign": 0,
-    "max-len": [2, 120, 2],
+    "max-len": [
+      2,
+      120,
+      2
+    ],
     "space-before-function-paren": 0,
     "dot-notation": 1
   }

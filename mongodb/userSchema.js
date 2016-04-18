@@ -6,15 +6,11 @@ module.exports = new mongoose.Schema({
       type: String,
       lowercase: true
     },
-    picture: {
-      type: String,
-      match: /^https?:\/\//i
-    },
     email: {
       type: String,
       lowercase: true
     },
-    profileUrl: {
+    password: {
       type: String,
       match: /^https?:\/\//i
     }

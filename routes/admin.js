@@ -37,23 +37,27 @@ passport.use(new Strategy(
     return cb(null, user);
   }));
 
-router.get('/login*', function(req, res) {
+router.get('/login', function(req, res) {
   res.render('partials/admin/login');
 });
 
-router.get('/fail*', function(req, res) {
+router.get('/fail', function(req, res) {
   res.render('partials/admin/fail');
 });
 
-router.get('/selectAction*', function(req, res) {
+router.get('/selectAction', function(req, res) {
   res.render('partials/admin/selectAction');
 });
 
-router.get('/editHomePage*', function(req, res) {
+router.get('/selectActionWithPublishSuccess', function(req, res) {
+  res.render('partials/admin/selectActionWithPublishSuccess');
+});
+
+router.get('/editHomePage', function(req, res) {
   res.render('partials/admin/editHomePage');
 });
 
-router.get('/addArticlePage*', function(req, res) {
+router.get('/addArticlePage', function(req, res) {
   res.render('partials/admin/addArticlePage');
 });
 
