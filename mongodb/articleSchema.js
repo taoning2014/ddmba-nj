@@ -12,5 +12,8 @@ module.exports = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  imgURL: {
+    type: String
   }
 });
