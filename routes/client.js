@@ -13,4 +13,16 @@ router.get('/blogs', function(req, res) {
   });
 });
 
+router.get('/events', function(req, res) {
+  res.render('partials/client/events', { layout: 'client' });
+});
+
+router.get('/contact', function(req, res) {
+  res.render('partials/client/contact', { layout: 'client' });
+});
+
+router.get('/jobs', function(req, res) {
+  res.render('partials/client/jobs', { layout: 'client' });
+});
+
 module.exports = router;
