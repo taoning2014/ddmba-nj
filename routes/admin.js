@@ -4,6 +4,8 @@ var router = express.Router();
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 
+var Article = require('../mongodb/models').Article;
+
 router.use(passport.initialize());
 router.use(passport.session());
 
@@ -58,7 +60,24 @@ router.get('/editHomePage', function(req, res) {
 });
 
 router.get('/addArticlePage', function(req, res) {
-  res.render('partials/admin/addArticlePage');
+  Article.find({}, null, { sort: '-date' }, function(err, docs) {
+    res.render('partials/admin/addArticlePage', { articles: docs });
+  });
+});
+
+router.get('/editArticlePage/:_id', function(req, res) {
+  Article.find({}, null, { sort: '-date' }, function(err, docs) {
+    Article.find({ _id: req.params._id }, function(err, article) {
+      if (article) {
+        res.render('partials/admin/editArticlePage', {
+          article: article[0],
+          articles: docs
+        });
+      } else {
+        res.redirect('/addArticlePage');
+      }
+    });
+  });
 });
 
 router.post('/login',

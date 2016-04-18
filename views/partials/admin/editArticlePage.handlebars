@@ -1,21 +1,22 @@
 <md-toolbar class="">
   <div class="md-toolbar-tools">
-    <h2 class="md-flex">Add Article</h2>
+    <h2 class="md-flex">Edit Article</h2>
   </div>
 </md-toolbar>
 
 <md-content layout-padding>
   <div layout="row">
-    <form name="addArticle" action="/api/post/article" method="post" flex="60" layout="column">
+    <form name="addArticle" action="/api/post/article/article_id" method="post" flex="60" layout="column">
       <md-input-container>
         <label>Title</label>
-        <input name="title">
+        <input name="title" value={{article.title}}>
       </md-input-container>
                     <textarea placeholder="Add content here"
                               name="content"
                               rows="25" cols="83"
-                              md-select-on-focus></textarea>
+                              md-select-on-focus>{{article.content}}</textarea>
       <div layout="row">
+        <md-button href="/addArticlePage" class="md-primary">add new article</md-button>
         <md-button class="md-primary" type="submit">submit</md-button>
       </div>
     </form>
