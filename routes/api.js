@@ -8,14 +8,14 @@ var randomInt = function() {
   return Math.floor(Math.random() * 6 + 1);
 }
 
-router.post('/api/post/article/:_id', function(req, res) {
+router.post('/api/post/article/:_id?', function(req, res) {
+
   // _id exist means edit existed article
   if (req.params._id) {
+    console.log('Hit here', req.body.title, req.body.content);
     Article.findOneAndUpdate({ _id: req.params._id }, {
-      $set: {
-        title: req.body.title,
-        content: req.body.content
-      }
+      title: req.body.title,
+      content: req.body.content
     }, function() {
       console.log('Update success!');
       res.redirect('/selectActionWithPublishSuccess');

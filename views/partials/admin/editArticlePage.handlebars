@@ -6,7 +6,7 @@
 
 <md-content layout-padding>
   <div layout="row">
-    <form name="addArticle" action="/api/post/article/article_id" method="post" flex="60" layout="column">
+    <form name="addArticle" action="/api/post/article/{{article.id}}" method="post" flex="60" layout="column">
       <md-input-container>
         <label>Title</label>
         <input name="title" value={{article.title}}>
