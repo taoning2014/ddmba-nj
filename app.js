@@ -14,9 +14,8 @@ var admin = require('./routes/admin');
 var client = require('./routes/client');
 
 var app = express();
-//var config = require('./config.json')[app.get('env')];
 
-var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || process.env.MONGODB_URI || config.mongo_url;
+var uristring = process.env.MONGODB_URI || process.env.mongo_url_local_dev;
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'admin',

@@ -1,8 +1,0 @@
-{
-  "development": {
-    "mongo_url": "mongodb://localhost:27017/ddmba-nj"
-  },
-  "production": {
-    "mongo_url": ""
-  }
-}
