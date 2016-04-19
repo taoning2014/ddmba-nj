@@ -1,0 +1,65 @@
+{{> header }}
+
+<!-- Page Title
+    ============================================= -->
+<section id="page-title">
+
+  <div class="container clearfix">
+    <h1>最新消息</h1>
+    <span>近期活動以及相關新聞報導</span>
+    <ol class="breadcrumb">
+      <li><a href="/homepage.html">首頁</a></li>
+      <li class="active">活動查詢</li>
+    </ol>
+  </div>
+
+</section><!-- #page-title end -->
+
+<!-- Content
+    ============================================= -->
+<section id="content">
+
+  <div class="content-wrap">
+
+    <div class="container clearfix">
+
+      <!-- Posts
+                ============================================= -->
+      <div id="posts">
+
+        <!-- begin of article -->
+        {{#each articles}}
+          <div class="entry clearfix">
+            <div class="entry-image">
+              <a href="#" data-lightbox="image"><img class="image_fade"
+                                                     src={{imgURL}} alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title">
+              <h2><a href="blog-single.html">{{ title }}</a></h2>
+            </div>
+            <ul class="entry-meta clearfix">
+              <li><i class="icon-calendar3"></i> {{date}} </li>
+              <li><a href="#"><i class="icon-user"></i> admin</a></li>
+            </ul>
+            <div class="entry-content">
+              <p>{{ content }}</p>
+              <a href="blog-single.html" class="more-link">Read More</a>
+            </div>
+          </div>
+        {{/each}}
+        <!-- end of article -->
+
+        <!-- Pagination
+                  ============================================= -->
+        <ul class="pager nomargin">
+          <li class="previous"><a href="#">&larr; Older</a></li>
+          <li class="next"><a href="#">Newer &rarr;</a></li>
+        </ul><!-- .pager end -->
+
+      </div>
+
+    </div>
+
+</section><!-- #content end -->
+
+{{> footer }}

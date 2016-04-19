@@ -18,7 +18,10 @@ var app = express();
 
 var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || process.env.MONGODB_URI || config.mongo_url;
 
-app.engine('handlebars', exphbs({ defaultLayout: 'editor' }));
+app.engine('handlebars', exphbs({
+  defaultLayout: 'admin',
+  partialsDir: 'views/partials/'
+}));
 app.set('view engine', 'handlebars');
 
 app.use(cors());

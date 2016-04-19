@@ -47,7 +47,7 @@ router.use(passport.initialize());
 router.use(passport.session());
 
 router.get('/login', function(req, res) {
-  res.render('partials/admin/login');
+  res.render('pages/admin/login');
 });
 
 router.post('/login',
@@ -57,7 +57,7 @@ router.post('/login',
   });
 
 router.get('/fail', function(req, res) {
-  res.render('partials/admin/fail');
+  res.render('pages/admin/fail');
 });
 
 // test if user is login
@@ -71,20 +71,20 @@ router.get('/*', function(req, res, next) {
 });
 
 router.get('/selectAction', function(req, res) {
-  res.render('partials/admin/selectAction');
+  res.render('pages/admin/selectAction');
 });
 
 router.get('/selectActionWithPublishSuccess', function(req, res) {
-  res.render('partials/admin/selectActionWithPublishSuccess');
+  res.render('pages/admin/selectActionWithPublishSuccess');
 });
 
 router.get('/editHomePage', function(req, res) {
-  res.render('partials/admin/editHomePage');
+  res.render('pages/admin/editHomePage');
 });
 
 router.get('/addArticlePage', function(req, res) {
   Article.find({}, null, { sort: '-date' }, function(err, docs) {
-    res.render('partials/admin/addArticlePage', { articles: docs });
+    res.render('pages/admin/addArticlePage', { articles: docs });
   });
 });
 
@@ -92,7 +92,7 @@ router.get('/editArticlePage/:_id', function(req, res) {
   Article.find({}, null, { sort: '-date' }, function(err, docs) {
     Article.find({ _id: req.params._id }, function(err, article) {
       if (article) {
-        res.render('partials/admin/editArticlePage', {
+        res.render('pages/admin/editArticlePage', {
           article: article[0],
           articles: docs
         });
